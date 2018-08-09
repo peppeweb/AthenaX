@@ -1,0 +1,15 @@
+athenax.master.uri: http://localhost:8083
+catalog.impl: com.uber.athenax.backend.server.MyCatalogProvider
+clusters:
+  foo:
+    yarn.site.location: hdfs:///app/athenax/yarn-site.xml
+    athenax.home.dir: hdfs:///tmp/athenax
+    flink.uber.jar.location: hdfs:///app/athenax/flink.jar
+    localize.resources:
+      - log4j.properties
+    additional.jars:
+      - http://foo/connectors.jar
+      - http://foo/foo.jar
+extras:
+  foo: bar
+  jobstore.leveldb.file: db

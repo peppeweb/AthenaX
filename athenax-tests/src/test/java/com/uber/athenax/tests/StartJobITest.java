@@ -60,7 +60,8 @@ public class StartJobITest {
       setUpKafka(kafkaCluster);
       cluster.start();
       AthenaXConfiguration conf = generateConf(cluster);
-      ServerContext.INSTANCE.initialize(conf);
+
+        ServerContext.INSTANCE.initialize(conf);
       ServerContext.INSTANCE.start();
       try (WebServer server = new WebServer(URI.create("http://localhost:0"))) {
         server.start();
